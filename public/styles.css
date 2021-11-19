@@ -1,0 +1,30 @@
+/*
+  Name: Jerry Huang
+  Date: 11/15/2021
+  Section AF Tara Wueger & Austin Jenchi
+
+  This CSS file is to style index.html and add a consistent style and feel to the
+  overall fake identity generator v2 website font, buttons, etc.
+*/
+
+body {
+  background-color: rgba(134, 181, 223, 0.76);
+  font-family: "Helvetica", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+button {
+  border-style: solid;
+  border-color: rgba(253, 253, 253, 0.719);
+  border-radius: 5px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+
