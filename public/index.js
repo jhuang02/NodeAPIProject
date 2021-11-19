@@ -3,8 +3,9 @@
  * Date: 11/15/2021
  * Section AF Tara Wueger & Austin Jenchi
  *
- * This JS file uses the Faker API to get a fake persons info and then displays the
- * first name, last name, and sex when the user presses the generate button.
+ * This JS file uses a custon node API to randomly generate a
+ * first name and last name when the user presses the generate female or male identity
+ * button.
  */
 
 "use strict";
@@ -23,7 +24,7 @@
   }
 
   /**
-   * Fetches fake identity info from Faker API. Turns off generate button while loading,
+   * Fetches fake identity info from custom API. Turns off generate button while loading,
    * displays loading message, resets identity info if button was previously pressed
    * before. The generate button can be pressed again once the response is received and
    * handled from the API.
@@ -62,7 +63,7 @@
   /**
    * Using response data from the API, appends info about the first name,
    * last name, email, and sex of the new fake identity onto the screen.
-   * @param {JSON} responseData - response from Faker API
+   * @param {JSON} responseData - response from custom node API
    */
   function processData(responseData, sex) {
     document.getElementById("loading").textContent = "";
@@ -100,8 +101,8 @@
   /**
    * If the response is successful, return, or else throw an error with the
    * response text.
-   * @param {object} response - response from Faker API
-   * @returns {object} response from Faker API if fetching went ok
+   * @param {object} response - response from custom node API
+   * @returns {object} response from custom node API if fetching went ok
    */
   async function statusCheck(response) {
     if (!response.ok) {
