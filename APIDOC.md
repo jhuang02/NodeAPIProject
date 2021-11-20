@@ -23,9 +23,9 @@ by a new line.
 ```
 
 **Error Handling:**
-Since there is no user input, and the /male endpoint is simply called by a button click, there is
-no specific error handling for this, but I had error handling of returning a 400 status error
-when any other endpoint besides male or female is somehow requested.
+- Possible 400 (invalid request) errors (all plain text):
+  - If the client attempts to pass in a query or other data after the /male endpoint, returns an
+  error with message: 'Error invalid endpoint!'
 
 ## *Request random female first and last name*
 **Request Format:** /female
@@ -49,6 +49,6 @@ first and last name fields.
 ```
 
 **Error Handling:**
-Since there is no user input, and the /female endpoint is simply called by a button click, there is
-no specific error handling for this, but I had error handling of returning a 400 status error
-when any other endpoint besides male or female is somehow requested.
+- Possible 400 (invalid request) errors (all plain text):
+  - If the client attempts to pass in a query or other data after the /female endpoint, returns an
+  error with message: 'Error invalid endpoint!'

@@ -25,9 +25,20 @@ app.get('/female', function (req, res) {
   res.json(female);
 });
 
-/** All other endpoints are invalid and will send an error status of 400 */
-app.get('*', function(req, res){
-  res.status(400).send(
+/** If the client attempts to pass in a query or other data after the /male breakpoint,
+ * then a 400 error is thrown
+ */
+app.get('/male*', function(req, res){
+  res.status(400).type('text').send(
+    "Error invalid endpoint!"
+  );
+});
+
+/** If the client attempts to pass in a query or other data after the /female breakpoint,
+ * then a 400 error is thrown
+ */
+app.get('/female*', function(req, res){
+  res.status(400).type('text').send(
     "Error invalid endpoint!"
   );
 });
@@ -57,7 +68,8 @@ function allLast() {
 function randomMaleName() {
   let first = allMale();
   let last = allLast();
-  return first[Math.floor(Math.random() * first.length)] + "\n" + last[Math.floor(Math.random() * last.length)];
+  return first[Math.floor(Math.random() * first.length)] + "\n"
+  + last[Math.floor(Math.random() * last.length)];
 }
 
 /**
@@ -66,7 +78,8 @@ function randomMaleName() {
  */
 function randomFemaleName() {
   let femaleName = allFemale();
-  return {'firstName': femaleName.firstName[Math.floor(Math.random() * femaleName.firstName.length)],
+  return {'firstName': femaleName.firstName[Math.floor(Math.random() *
+    femaleName.firstName.length)],
   'lastName': femaleName.lastName[Math.floor(Math.random() * femaleName.lastName.length)]}
 }
 
