@@ -18,9 +18,11 @@
   /** Once page is loaded, create listeners to setup page behavior */
   function init() {
     document.getElementById("btn-generate-male").addEventListener("click", function() {
-      createIdentity('male')});
+      createIdentity('male');
+    });
     document.getElementById("btn-generate-female").addEventListener("click", function() {
-      createIdentity('female')});
+      createIdentity('female');
+    });
   }
 
   /**
@@ -47,23 +49,22 @@
    */
   function fetchIdentity(sex) {
     if (sex === "female") {
-      fetch('/' + sex)
-      .then(statusCheck)
-      .then(resp => resp.json())
-      .then(function(response) {
-        processData(response, sex)
-      })
-      .catch(handleError);
+        fetch('/' + sex)
+        .then(statusCheck)
+        .then(resp => resp.json())
+        .then(function(response) {
+        processData(response, sex);
+        })
+        .catch(handleError);
     } else {
-      fetch('/' + sex)
-      .then(statusCheck)
-      .then(resp => resp.text())
-      .then(function(response) {
-        processData(response, sex)
-      })
-      .catch(handleError);
+        fetch('/' + sex)
+        .then(statusCheck)
+        .then(resp => resp.text())
+        .then(function(response) {
+        processData(response, sex);
+        })
+        .catch(handleError);
     }
-
   }
 
   /**
@@ -104,6 +105,7 @@
   /**
    * Capitilize the first letter of a string
    * @param {string} string - the string to capitalize
+   * @returns {string} string - the string to capitalize
    */
   function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);

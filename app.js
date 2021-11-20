@@ -32,7 +32,7 @@ app.get('/female', function(req, res) {
  * If the client attempts to pass in a query or other data after the /male breakpoint,
  * then a 400 error is thrown
  */
-app.get('/male*', function(req, res){
+app.get('/male*', function(req, res) {
   res.status(INVALIDERROR);
   res.type('text');
   res.send(
@@ -44,8 +44,10 @@ app.get('/male*', function(req, res){
  * If the client attempts to pass in a query or other data after the /female breakpoint,
  * then a 400 error is thrown
  */
-app.get('/female*', function(req, res){
-  res.status(400).type('text').send(
+app.get('/female*', function(req, res) {
+  res.status(INVALIDERROR);
+  res.type('text');
+  res.send(
     "Error invalid endpoint!"
   );
 });
@@ -55,8 +57,8 @@ app.get('/female*', function(req, res){
  * @return {array} - an array of all male first names
  */
 function allMale() {
-    return ["Dane", "Francisco", "Brenden", "Ahmed", "Jarrett", "Roman", "Kymani", "Brayden",
-    "Nelson", "Luca", "Talan", "Brett"];
+  return ["Dane", "Francisco", "Brenden", "Ahmed", "Jarrett", "Roman", "Kymani", "Brayden",
+  "Nelson", "Luca", "Talan", "Brett"];
 }
 
 /**
@@ -64,8 +66,8 @@ function allMale() {
  * @return {array} - an array of all last names
  */
 function allLast() {
-    return ["Edwards", "Lynn", "Rodgers", "Kidd", "Underwood", "Decker", "Costa", "King", "Norton",
-     "Arellano", "Walker", "Harvey"];
+  return ["Edwards", "Lynn", "Rodgers", "Kidd", "Underwood", "Decker", "Costa", "King", "Norton",
+  "Arellano", "Walker", "Harvey"];
 }
 
 /**
@@ -87,7 +89,7 @@ function randomFemaleName() {
   let femaleName = allFemale();
   return {'firstName': femaleName.firstName[Math.floor(Math.random() *
     femaleName.firstName.length)],
-  'lastName': femaleName.lastName[Math.floor(Math.random() * femaleName.lastName.length)]}
+  'lastName': femaleName.lastName[Math.floor(Math.random() * femaleName.lastName.length)]};
 }
 
 /**
