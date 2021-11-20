@@ -49,19 +49,19 @@
    */
   function fetchIdentity(sex) {
     if (sex === "female") {
-        fetch('/' + sex)
+      fetch('/' + sex)
         .then(statusCheck)
         .then(resp => resp.json())
         .then(function(response) {
-        processData(response, sex);
+          processData(response, sex);
         })
         .catch(handleError);
     } else {
-        fetch('/' + sex)
+      fetch('/' + sex)
         .then(statusCheck)
         .then(resp => resp.text())
         .then(function(response) {
-        processData(response, sex);
+          processData(response, sex);
         })
         .catch(handleError);
     }
