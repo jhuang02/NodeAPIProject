@@ -109,4 +109,4 @@ app.use(express.static('public'));
 
 /** Listen on port 8000 */
 const PORT = process.env.PORT || PORTNUM;
-app.listen(PORTNUM);
+app.listen(PORT);
