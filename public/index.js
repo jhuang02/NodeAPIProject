@@ -10,8 +10,6 @@
 
 "use strict";
 
-// const first = require("ee-first");
-
 (function() {
   window.addEventListener("load", init);
 
@@ -69,7 +67,7 @@
 
   /**
    * Using response data from the API, appends info about the first name,
-   * last name, email, and sex of the new fake identity onto the screen.
+   * last name, and sex of the new fake identity onto the screen.
    * @param {JSON} responseData - response from custom node API
    * @param {string} sex - if "male", API returns male names, if "female", return female names
    */
