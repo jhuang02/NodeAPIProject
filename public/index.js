@@ -24,10 +24,11 @@
   }
 
   /**
-   * Fetches fake identity info from custom API. Turns off generate button while loading,
+   * Calls function which fetches identity info from API. Turns off generate button while loading,
    * displays loading message, resets identity info if button was previously pressed
    * before. The generate button can be pressed again once the response is received and
    * handled from the API.
+   * @param {string} sex - if "male", return male names, if "female", return female names
    */
   function createIdentity(sex) {
     document.getElementById("btn-generate-" + sex).disabled = true;
@@ -39,6 +40,11 @@
     document.getElementById("btn-generate-" + sex).disabled = false;
   }
 
+  /**
+   * Fetches fake identity info from custom API, processing and displaying the content unless
+   * there is an error.
+   * @param {string} sex - if "male", API returns male names, if "female", return female names
+   */
   function fetchIdentity(sex) {
     if (sex === "female") {
       fetch('/' + sex)
@@ -64,6 +70,7 @@
    * Using response data from the API, appends info about the first name,
    * last name, email, and sex of the new fake identity onto the screen.
    * @param {JSON} responseData - response from custom node API
+   * @param {string} sex - if "male", API returns male names, if "female", return female names
    */
   function processData(responseData, sex) {
     document.getElementById("loading").textContent = "";
@@ -94,6 +101,10 @@
     identityArticle.appendChild(sexText);
   }
 
+  /**
+   * Capitilize the first letter of a string
+   * @param {string} string - the string to capitalize
+   */
   function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
   }

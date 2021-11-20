@@ -1,47 +1,54 @@
-# *FILL IN NAME* API Documentation
-*Fill in a short description here about the API's purpose.*
+# Fake Identity API Documentation
+This Fake Identity API returns a random first and last name combination based off
+if the client requested a female or male identity.
 
-## *Fill in Endpoint 1 Title*
-**Request Format:** *Fill in example request format*
+## *Request random male first and last name*
+**Request Format:** /male
 
-**Request Type:** *Fill in request type*
+**Request Type:** GET
 
 **Returned Data Format**: Plain Text
 
-**Description:** *Fill in description*
+**Description:** Returns plain text of a random first and last name combination seperated
+by a new line.
 
 
-**Example Request:** *Fill in example request*
+**Example Request:** /male
 
 **Example Response:**
-*Fill in example response in the ticks*
 
 ```
-
+"Luca
+\nWalker"
 ```
 
 **Error Handling:**
-*Fill in an example of the error handling*
+Since there is no user input, and the /male endpoint is simply called by a button click, there is
+no specific error handling for this, but I had error handling of returning a 400 status error
+when any other endpoint besides male or female is somehow requested.
 
-## *Fill in Endpoint 2 Title*
-**Request Format:** *Fill in example request format*
+## *Request random female first and last name*
+**Request Format:** /female
 
-**Request Type:** *Fill in request type*
+**Request Type:** GET
 
 **Returned Data Format**: JSON
 
-**Description:** *Fill in description*
+**Description:** Returns JSON object with a random first and last name stored in its
+first and last name fields.
 
-**Example Request:** *Fill in example request*
+**Example Request:** /female
 
 **Example Response:**
-*Fill in example response in the {}*
 
 ```json
 {
-
+  "firstName": "Kamryn",
+  "lastName":  "Holland"
 }
 ```
 
 **Error Handling:**
-*Fill in an example of the error handling*
+Since there is no user input, and the /female endpoint is simply called by a button click, there is
+no specific error handling for this, but I had error handling of returning a 400 status error
+when any other endpoint besides male or female is somehow requested.
